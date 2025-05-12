@@ -1,0 +1,11 @@
+/* Importar la fuente Poppins desde Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Poppins%3A100%2C100i%2C200%2C200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i&ver=6.4.5");
+
+/* Aplicar Poppins como fuente global */
+body, html {
+    font-family: "Poppins", sans-serif;
+}
+
+button, input, select, textarea, .v-btn, .v-toolbar-title, .v-app-bar, .v-footer, .v-container, .v-col, .v-row, a, p, h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif !important;
+}
