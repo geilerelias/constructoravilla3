@@ -71,6 +71,111 @@
             </v-row>
         </v-container>
 
+        <v-sheet class="bg-secondary py-md-15 py-sm-8 py-8">
+            <v-container>
+                <v-row justify="space-between">
+                    <v-col class="pb-sm-4 pb-1" cols="12" md="3">
+                        <div class="pt-2 mb-0 d-flex align-center">
+                            <v-avatar
+                                class="v-avatar--density-default v-avatar--variant-flat secondary lighten-2"
+                                color="primary"
+                                size="72"
+                            >
+                                <v-icon
+                                    class="mdi-map-marker mdi"
+                                    size="36"
+                                />
+                            </v-avatar>
+                            <div class="d-flex justify-center align-center">
+                                <div class="d-inline ml-3">
+                                    <h4
+                                        class="text-left text-h6 mb-1 secondary--text"
+                                    >
+                                        Visítanos
+                                    </h4>
+                                    <h5
+                                        class="font-weight-medium text-body-1 text-white ml-2"
+                                    >
+                                        <a class="font-weight-medium "
+                                           href="https://www.google.com/maps?q=Calle+85c+71-57+Barranquilla">
+                                            Calle 85c 71-57 local 6 Barranquilla
+                                        </a>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </v-col>
+
+                    <v-col class="pb-sm-4 pb-1" cols="12" md="3">
+                        <div class="pt-2 mb-0 d-flex align-center">
+                            <v-avatar
+                                class="v-avatar--density-default v-avatar--variant-flat grey lighten-2"
+                                color="primary"
+                                size="72"
+                            >
+                                <v-icon class="mdi-phone mdi" size="36"/>
+                            </v-avatar>
+                            <div
+                                class="d-flex flex-column justify-center align-center"
+                            >
+                                <div class="d-inline ml-3">
+                                    <h4
+                                        class="text-left text-h6 mb-1 secondary--text"
+                                    >
+                                        Llámanos
+                                    </h4>
+                                    <a
+                                        class="text-decoration-none"
+                                        href="tel:+57 012 3456789"
+                                    >
+                                        <h5
+                                            class="font-weight-medium text-body-1 text-white"
+                                        >
+                                            <a class="font-weight-medium"
+                                               href="tel:+573045835556">
+                                                304 583 5556
+                                            </a>
+                                        </h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </v-col>
+
+                    <v-col cols="12" md="4">
+                        <div class="pt-2 mb-0 d-flex align-center">
+                            <v-avatar
+                                class="v-avatar--density-default v-avatar--variant-flat grey lighten-2"
+                                color="primary"
+                                size="72"
+                            >
+                                <v-icon class="mdi-email mdi" size="36"/>
+                            </v-avatar>
+                            <div
+                                class="d-flex flex-column justify-center align-center"
+                            >
+                                <div class="d-inline ml-3">
+                                    <h4
+                                        class="text-left text-h6 mb-1 secondary--text"
+                                    >
+                                        Escríbenos
+                                    </h4>
+                                    <div class="d-flex">
+                                        <a
+                                            class="text-decoration-none font-weight-medium text-body-1 text-white"
+                                            href="mailto:contacto@constructoravillaiii.com"
+                                        >
+                                            contacto@constructoravillaiii.com
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </v-col>
+                </v-row>
+            </v-container>
+        </v-sheet>
+
         <v-container class="process-section py-10">
             <v-row>
                 <v-col cols="12" class="text-center mb-10">

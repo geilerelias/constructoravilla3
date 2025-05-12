@@ -1,37 +1,37 @@
 <template>
     <v-app-bar
-        density="compact"
         :elevation="0"
-        height="50"
         color="primary"
+        density="compact"
+        height="50"
         scroll-behavior="hide"
     >
         <v-container class="container">
             <v-row
-                class="d-flex"
                 :class="
                     xs
                         ? 'flex-column align-center py-0'
                         : 'justify-space-between align-center'
                 "
+                class="d-flex"
             >
                 <!-- Menú de navegación -->
                 <v-col
                     v-if="!xs"
-                    cols="auto"
-                    class="text-center"
                     :class="smAndDown ? 'py-0' : ''"
+                    class="text-center"
+                    cols="auto"
                 >
                     <Link
                         v-for="item in filteredRoutes"
                         :key="item.name"
-                        class="text-decoration-none text-white text-capitalize justify-center"
                         :href="route(item.path)"
+                        class="text-decoration-none text-white text-capitalize justify-center"
                     >
                         <v-btn
+                            class="mx-1 text-capitalize px-1"
                             size="small"
                             variant="text"
-                            class="mx-1 text-capitalize px-1"
                         >
                             {{ item.name }}
                         </v-btn>
@@ -39,32 +39,32 @@
                 </v-col>
                 <!-- Redes sociales para pantallas grandes -->
                 <v-col
-                    cols="auto"
-                    class="text-right"
                     :class="xs ? 'text-center' : ''"
+                    class="text-right"
+                    cols="auto"
                 >
                     <v-icon
+                        class="ml-4"
                         icon="mdi-facebook"
                         size="x-small"
-                        class="ml-4"
                         @click="openLink('https://facebook.com')"
                     ></v-icon>
                     <v-icon
+                        class="ml-4"
                         icon="mdi-twitter"
                         size="x-small"
-                        class="ml-4"
                         @click="openLink('https://twitter.com')"
                     ></v-icon>
                     <v-icon
+                        class="ml-4"
                         icon="mdi-instagram"
                         size="x-small"
-                        class="ml-4"
                         @click="openLink('https://instagram.com')"
                     ></v-icon>
                     <v-icon
+                        class="ml-4"
                         icon="mdi-linkedin"
                         size="x-small"
-                        class="ml-4"
                         @click="openLink('https://linkedin.com')"
                     ></v-icon>
                 </v-col>
@@ -73,13 +73,13 @@
     </v-app-bar>
 
     <v-app-bar
-        class="d-flex justify-center align-center"
         :class="lgAndUp ? 'py-2' : ''"
-        app
-        elevated="12"
         :density="lgAndUp || smAndDown ? 'default' : 'prominent'"
-        scroll-behavior="elevate"
+        app
+        class="d-flex justify-center align-center"
         color="white"
+        elevated="12"
+        scroll-behavior="elevate"
     >
         <v-container class="">
             <v-row
@@ -87,8 +87,8 @@
             >
                 <v-col
                     :order="mdAndDown ? 1 : 1"
-                    cols="auto"
                     class="d-flex align-center text-left"
+                    cols="auto"
                 >
                     <img
                         v-if="lgAndUp"
@@ -107,7 +107,6 @@
                 <transition name="fade">
                     <!-- v-if="(mdAndUp && showNav) || lgAndUp" -->
                     <v-col
-                        :order="mdAndDown ? 3 : 2"
                         v-if="mdAndUp"
                         :class="
                             md
@@ -115,8 +114,9 @@
                                 : 'd-flex justify-center align-center w-full min-w-full justify-space-between mx-0'
                         "
                         :cols="mdAndDown ? '12' : 'auto'"
-                        rounded="0"
+                        :order="mdAndDown ? 3 : 2"
                         class="rounded-0"
+                        rounded="0"
                     >
                         <Link
                             v-for="item in routesStore.routes"
@@ -125,12 +125,12 @@
                             class="text-decoration-none d-md-flex d-none py-0 menu text-capitalize justify-center"
                         >
                             <v-btn
-                                :stacked="!md"
-                                variant="text"
-                                class="text-capitalize text-subtitle-1 hover-effect"
                                 :color="
                                     isActive(item) ? 'primary' : 'secondary'
                                 "
+                                :stacked="!md"
+                                class="text-capitalize text-subtitle-1 hover-effect"
+                                variant="text"
                             >
                                 {{ item.name }}
                             </v-btn>
@@ -140,27 +140,28 @@
 
                 <v-col
                     :order="mdAndDown ? 2 : 3"
-                    cols="auto"
                     class="d-flex align-center text-right"
+                    cols="auto"
                 >
-                    <v-btn
-                        v-if="!smAndDown"
-                        color="primary"
-                        variant="elevated"
-                        class="text-capitalize"
-                    >
-                        Cotizar
-                    </v-btn>
-
+                    <Link :href="route('contact')">
+                        <v-btn
+                            v-if="!smAndDown"
+                            class="text-capitalize"
+                            color="primary"
+                            variant="elevated"
+                        >
+                            Cotizar
+                        </v-btn>
+                    </Link>
                     <v-app-bar-nav-icon
+                        v-if="smAndDown"
+                        class="ml-4 pa-0 rounded-sm"
                         color="primary"
                         density="comfortable"
-                        variant="elevated"
-                        class="ml-4 pa-0 rounded-sm"
-                        size="default"
-                        icon-size="40px"
                         icon="mdi-menu"
-                        v-if="smAndDown"
+                        icon-size="40px"
+                        size="default"
+                        variant="elevated"
                         @click="toggleDrawer"
                     >
                         <template v-slot:icon>
@@ -174,13 +175,12 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from "vue";
-import { Link, router } from "@inertiajs/vue3"; // Usar el router de Inertia
-import imgLogo from "@images/logo/logo.png"; // Usar notación @
+import {computed, onMounted, onUnmounted, ref} from "vue";
+import {Link, router} from "@inertiajs/vue3"; // Usar el router de Inertia
 import imgLogoOriginal from "@images/logo/logo-original-2.png"; // Usar notación @
-import { useDisplay } from "vuetify";
-import { useRoutesStore } from "@/../stores/routesStore"; // Usar notación @
-import { useDrawerStore } from "@/../stores/drawerStore"; // Usar notación @
+import {useDisplay} from "vuetify";
+import {useRoutesStore} from "@/../stores/routesStore"; // Usar notación @
+import {useDrawerStore} from "@/../stores/drawerStore"; // Usar notación @
 
 const routesStore = useRoutesStore();
 const drawerStore = useDrawerStore();
